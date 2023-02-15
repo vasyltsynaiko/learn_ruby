@@ -31,7 +31,18 @@ def first_word(word)
     a[0].to_s
 end
 
-def titleize(cap)
-  string = cap.split(" ")
-  string[0].capitalize!
+LITTLE_WORDS = %w[or and the over]
+def titleize(cap) 
+    words = cap.split(" ")
+#     for i in 0..(words.size-1) 
+#         if !LITTLE_WORDS.include?(words[i]) || i == 0
+#         words[i].capitalize!
+#         end
+#     end
+#  words.join(' ')
+
+     words.map.with_index do |word, i|
+        next word if LITTLE_WORDS.include?(word) && i != 0
+        word.capitalize
+      end.join(" ")
 end
