@@ -13,7 +13,7 @@ class Temperature
     
     def in_fahrenheit
         if @hash.has_key?(:f)
-            return @hash[:f] 
+            return @hash[:f]
         elsif @hash.has_key?(:c)
             return @hash[:c]*9.to_f/5+32 
         elsif @temp1.is_a? Numeric
@@ -26,7 +26,7 @@ class Temperature
         if @hash.has_key?(:c)
             return @hash[:c] 
         elsif @hash.has_key?(:f)
-            return (@hash[:f]-32)*5.to_f/9  #formula to convert from F to C
+            return (@hash[:f]-32)*5.to_f/9 
         elsif @temp2.is_a? Numeric
             return (@temp2-32)*5.to_f/9
         else
